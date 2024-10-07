@@ -90,7 +90,7 @@
           
         </div>
         <div class="col-lg-5 col-12 order-1 order-lg-1 " data-aos="zoom-in" data-aos-delay="150">
-          <img class="img-fluid animated" src="images/hero-img.png" alt="animation img">
+          <img class="img-fluid animated" src="images/water-bottles/bottles4.png"  alt="animation img">
         </div>
       </div>
 
@@ -159,11 +159,15 @@
         </div>
         <div class="row ">
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 mx-auto"  data-aos="fade-up" data-aos-delay="100">
-            <img
-            src="images\water-bottles\bottles1.webp"
-            class="img-fluid rounded-top"
-            alt=""
-          />
+            <div class="d-flex justify-content-center">
+                <img
+                src="images\water-bottles\bottles5.png"
+                class="img-fluid rounded-top image-centered"
+                alt=""
+                style="height: 250px;"
+              />
+            </div>
+
             <div class="box">
               <div class="advanced">Popular</div>
 
@@ -294,13 +298,7 @@
                       <div class="container-fluid">
                         <div class="row">
                           <div class=" mx-auto"  data-aos="fade-up" data-aos-delay="100">
-                            <div class="d-flex justify-content-center">
-                            <img
-                            src="images\water-bottles\bottles1.webp"
-                            class="img-fluid rounded-top mx-auto"
-                            alt=""
-                            width="200"
-                            />
+                            <div class="d-flex justify-content-center flex-wrap" id="bottlesDisplay">
                           </div>
 
                             <div class="box py-2">
@@ -360,8 +358,8 @@
                               </div>
                               
                               <div class="btn-wrap d-flex flex-row justify-content-center gap-1 lh-1  py-2">
-                                <a  class="fs-2 fw-light btn btn-success " id="firstProductQuantityMinus">KSh</a>
-                                <input type="text" class="p-2 rounded  fs-4"   id="firstProductQuantity"  >
+                                <a  class="fs-4 fw-light btn btn-success " id="firstProductQuantityMinus">KSh</a>
+                                <input type="text" class="p-2 rounded  fs-5 w-50"   id="firstProductQuantity"  >
                               </div>
                             
                               
@@ -385,11 +383,22 @@
                 </div>
               </div>
             </div>
+            <template data-bottle-template>
+              <img
+              src="images\water-bottles\bottles6.png"
+              class="img-fluid rounded-top mx-auto"
+              alt=""
+              width="75"
+              />
+            </template>
           
           <script>
             var modalId = document.getElementById('modalId');
             const firstProductQuantity = document.getElementById("firstProductQuantity");
             const pricePerLitre = 2.5;
+            const bottlesTemplate = document.querySelector("[data-bottle-template]");
+            const bottlesDisplay = document.getElementById("bottlesDisplay");
+
 
             firstProductQuantity.addEventListener("focus", (e)=>{
               e.target.blur()
@@ -398,6 +407,11 @@
             firstProductQuantity.value = volumeSelect.value * pricePerLitre
             volumeSelect.addEventListener("change", (e)=>{
               firstProductQuantity.value = Number(e.target.value) * pricePerLitre
+              bottlesDisplay.innerHTML = ""
+              for (let index = 0; index < (Number(e.target.value) / 20); index++) {
+                const bottleTem = bottlesTemplate.content.cloneNode(true).children[0];
+                bottlesDisplay.append(bottleTem)
+              }
             })
           
             modalId.addEventListener('show.bs.modal', function (event) {
@@ -1080,6 +1094,7 @@
   <!--end footer section-->
 
 
+
   <!-- pure counter  -->
   <script src="assets/purecounter/purecounter.js"></script>
   <!-- <script src=" https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.min.js "></script> -->
@@ -1111,6 +1126,11 @@
   <script src="js/form.js"></script>
 <!-- Locaiton Select -->
  <script src="js/location.js"></script>
+
+ <script>
+
+
+ </script>
 
 </body>
 
