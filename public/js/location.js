@@ -1,4 +1,5 @@
 const locationSelect = document.getElementById("locationSelect");
+const locationList = document.getElementById("OurLocations");
 
 const locations = async () => {
 	const locationResponse = await fetch("/location", { method: "GET" });
@@ -22,4 +23,15 @@ async function makeLocationSelections() {
 			`<option value='${element.location}' >${element.location}</option>`;
 	});
 }
+
+async function makeLocationList() {
+	const theLocations = await locations();
+	theLocations.forEach((element) => {
+		locationList.innerHTML =
+			locationList.innerHTML +
+			` <li><i class="bi bi-check-circle"></i>${element.location}</li>`;
+	});
+}
+
+makeLocationList();
 makeLocationSelections();
