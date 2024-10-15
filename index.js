@@ -18,7 +18,7 @@ app.use(cors({ origin: "*", methods: "GET,POST,PUT,DELETE" }));
 
 const orderRoute = require("./routes/order");
 const locationRoute = require("./routes/location");
-const { connectToDb } = require("./controllers/database");
+// const { connectToDb } = require("./controllers/database");
 
 // API Routes
 app.use("/message", messageRoutes);
@@ -57,15 +57,14 @@ app.get("/admin", (req, res) => {
 
 // Connect to MongoDB
 
-// mongoose
-// 	.connect(process.env.MONGODB_URI)
-// 	.then(() => {
-// 		console.log("Connected to MongoDB");
-// 	})
-// 	.catch((error) => {
-// 		console.error("Error connecting to MongoDB", error);
-// 	});
-connectToDb();
+mongoose
+	.connect(process.env.MONGODB_URI)
+	.then(() => {
+		console.log("Connected to MongoDB");
+	})
+	.catch((error) => {
+		console.error("Error connecting to MongoDB", error);
+	});
 
 // Remove app.listen() as Vercel handles port automatically
 
