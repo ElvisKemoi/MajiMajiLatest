@@ -5,7 +5,6 @@ const {
 	changeReadStatus,
 	deleteMessage,
 } = require("../controllers/message.js");
-const { dbMiddleware } = require("../controllers/database");
 
 router
 	.get("/", async (req, res) => {
@@ -14,7 +13,7 @@ router
 			res.json(foundMessages);
 		}
 	})
-	.post("/save", dbMiddleware, async (req, res) => {
+	.post("/save", async (req, res) => {
 		const { personName, email, subject, message } = req.body;
 
 		const savedMessage = await save(personName, email, subject, message);
@@ -27,7 +26,7 @@ router
 			res.json({ error: "There was an unexpected error in your request" });
 		}
 	})
-	.post("/markasread/:id", dbMiddleware, async (req, res) => {
+	.post("/markasread/:id", async (req, res) => {
 		const { id } = req.params;
 		const markedAsRead = await changeReadStatus(id);
 		if (!markedAsRead.error) {
@@ -36,7 +35,7 @@ router
 			res.json({ error: markedAsRead.error });
 		}
 	})
-	.post("/delete/:id", dbMiddleware, async (req, res) => {
+	.post("/delete/:id", async (req, res) => {
 		const { id } = req.params;
 		const deletedStatus = await deleteMessage(id);
 		if (!deletedStatus.error) {

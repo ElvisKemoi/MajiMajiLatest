@@ -1,10 +1,9 @@
 const location = require("../controllers/location");
 
 const router = require("express").Router();
-const { dbMiddleware } = require("../controllers/database");
 
 router
-	.get("/", dbMiddleware, async (req, res) => {
+	.get("/", async (req, res) => {
 		const theLocations = await location.list();
 		if (!theLocations.error && theLocations) {
 			res.json({ data: theLocations });
@@ -12,7 +11,7 @@ router
 			res.json({ error: theLocations.error });
 		}
 	})
-	.post("/", dbMiddleware, async (req, res) => {
+	.post("/", async (req, res) => {
 		const { newLocation } = req.body;
 		const savedLocation = await location.save(newLocation);
 		if (!savedLocation.error && savedLocation) {
@@ -21,7 +20,7 @@ router
 			res.json({ error: savedLocation.error });
 		}
 	})
-	.post("/delete/:id", dbMiddleware, async (req, res) => {
+	.post("/delete/:id", async (req, res) => {
 		const { id } = req.params;
 
 		const deletedLocation = await location.delete(id);

@@ -6,10 +6,9 @@ const {
 } = require("../controllers/order");
 
 const router = require("express").Router();
-const { dbMiddleware } = require("../controllers/database");
 
 router
-	.get("/", dbMiddleware, async (req, res) => {
+	.get("/", async (req, res) => {
 		const allOrders = await list();
 		if (!allOrders.error) {
 			res.json(allOrders);
@@ -17,7 +16,7 @@ router
 			res.json({ error: allOrders.error });
 		}
 	})
-	.post("/", dbMiddleware, async (req, res) => {
+	.post("/", async (req, res) => {
 		const { product, phoneNumber, location, price, personName } = req.body;
 		const savedOrder = await save(
 			product,
@@ -32,7 +31,7 @@ router
 			res.json({ error: "Error Saving Order!" });
 		}
 	})
-	.post("/markasdelivered/:id", dbMiddleware, async (req, res) => {
+	.post("/markasdelivered/:id", async (req, res) => {
 		const { id } = req.params;
 		const markedAsDelivered = await markDelivered(id);
 		if (!markedAsDelivered.error) {
@@ -41,7 +40,7 @@ router
 			res.json({ error: markedAsDelivered.error });
 		}
 	})
-	.post("/delete/:id", dbMiddleware, async (req, res) => {
+	.post("/delete/:id", async (req, res) => {
 		const { id } = req.params;
 		const orderDeleted = await deleteOrder(id);
 		if (!orderDeleted.error) {
