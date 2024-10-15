@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+<<<<<<< HEAD
 require("dotenv").config();
 
 const connectToDb = async () => {
@@ -13,6 +14,19 @@ const connectToDb = async () => {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
+=======
+const env = require("dotenv").config();
+
+let isConnected = false; // Track connection state
+
+const connectToDb = async () => {
+	if (isConnected) {
+		return; // Use existing connection
+	}
+	try {
+		await mongoose.connect(process.env.MONGODB_URI);
+		isConnected = true; // Connection successful
+>>>>>>> 99a76c2d0dd63976a5897441fe00b9ffa72e3e19
 		console.log("Connected to MongoDB");
 	} catch (error) {
 		console.error("Error connecting to MongoDB", error);
