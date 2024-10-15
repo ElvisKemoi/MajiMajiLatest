@@ -18,7 +18,6 @@ app.use(cors({ origin: "*", methods: "GET,POST,PUT,DELETE" }));
 
 const orderRoute = require("./routes/order");
 const locationRoute = require("./routes/location");
-// const { connectToDb } = require("./controllers/database");
 
 // API Routes
 app.use("/message", messageRoutes);
@@ -30,60 +29,41 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 // Serve index.html
 app.get("/", (req, res) => {
-	mongoose.connect(process.env.MONGODB_URI).then(() => {
-		const filePath = path.join(process.cwd(), "public", "index.html");
-		fs.readFile(filePath, "utf8", (err, data) => {
-			if (err) {
-				res.status(500).send("Error reading index.html file");
-			} else {
-				res.setHeader("Content-Type", "text/html");
-				res.send(data);
-			}
-			// console.log("Connected to MongoDB");
-		}).catch((error) => {
-			res
-				.status(500)
-				.json({ error: "Database Connection Failed!" + error.message });
-		});
+	const filePath = path.join(process.cwd(), "public", "index.html");
+	fs.readFile(filePath, "utf8", (err, data) => {
+		if (err) {
+			res.status(500).send("Error reading index.html file");
+		} else {
+			res.setHeader("Content-Type", "text/html");
+			res.send(data);
+		}
 	});
 });
 
 // Admin route (You can add admin logic here)
 app.get("/admin", (req, res) => {
-	mongoose
-		.connect(process.env.MONGODB_URI)
-		.then(() => {
-			const filePath = path.join(process.cwd(), "public", "admin.html");
-			fs.readFile(filePath, "utf8", (err, data) => {
-				if (err) {
-					res.status(500).send("Error reading index.html file");
-				} else {
-					res.setHeader("Content-Type", "text/html");
-					res.send(data);
-				}
-			});
-			// console.log("Connected to MongoDB");
-		})
-		.catch((error) => {
-			res
-				.status(500)
-				.json({ error: "Database Connection Failed!" + error.message });
-			// console.error("Error connecting to MongoDB", error);
-		});
-
+	const filePath = path.join(process.cwd(), "public", "admin.html");
+	fs.readFile(filePath, "utf8", (err, data) => {
+		if (err) {
+			res.status(500).send("Error reading index.html file");
+		} else {
+			res.setHeader("Content-Type", "text/html");
+			res.send(data);
+		}
+	});
 	// res.send("Admin panel route");
 });
 
 // Connect to MongoDB
 
-// mongoose
-// 	.connect(process.env.MONGODB_URI)
-// 	.then(() => {
-// 		console.log("Connected to MongoDB");
-// 	})
-// 	.catch((error) => {
-// 		console.error("Error connecting to MongoDB", error);
-// 	});
+mongoose
+	.connect(process.env.MONGODB_URI)
+	.then(() => {
+		console.log("Connected to MongoDB");
+	})
+	.catch((error) => {
+		console.error("Error connecting to MongoDB", error);
+	});
 
 // Remove app.listen() as Vercel handles port automatically
 
