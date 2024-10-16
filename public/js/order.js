@@ -103,7 +103,7 @@ async function showOrders() {
 			cardRemarkIcon.classList.toggle("bi-check-all", !delivered);
 
 			const cardRemark = orderCard.querySelector("[data-order-remark]");
-			const theRemark = delivered ? "Delivered" : "New Order";
+			const theRemark = delivered ? "Delivered" : "New ";
 			cardRemark.textContent = theRemark;
 
 			const cardNumber = orderCard.querySelector("[data-order-phone]");
@@ -129,14 +129,15 @@ async function showOrders() {
 			);
 			cardMarkAsDelivered.classList.toggle("d-none", delivered);
 			cardMarkAsDelivered.action = `/order/markasdelivered/${_id}`;
+			const cardCall = orderCard.querySelector("[data-order-phone-call]");
+			cardCall.href = `tel:${phoneNumber}`;
 
 			ordersList.append(orderCard);
 		}
 		monitorSubmission();
 	} else {
-		const theNoOrderCard =
-			orderNoOrderTemplate.content.cloneNode(true).children[0];
-		ordersList.append(theNoOrderCard);
+		const theNoOrderCard = orderNoOrderTemplate;
+		ordersList.innerHTML = theNoOrderCard.innerHTML;
 	}
 }
 

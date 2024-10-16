@@ -15,18 +15,25 @@
   <link rel="stylesheet" href="css/main.css" />
   <!-- bootstrap css -->
 
-  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- ?Bootstrap -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" /> -->
   <!-- <link rel="stylesheet" href="css/bootstrap-icons/bootstrap-icons.css" /> -->
-  <!-- <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3\font\bootstrap-icons.min.css" /> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- <link rel="stylesheet" href="css/boxicons/css/boxicons.min.css" /> -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
-  <!-- <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" /> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3\font\bootstrap-icons.min.css" />
+  <!-- ?Bootstrap Icons -->
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" /> -->
+  <link rel="stylesheet" href="css/boxicons/css/boxicons.min.css" />
+  <!-- ?BoxIcons -->
+
+  <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  -->
+  <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
+  <!-- ? Swiper -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  -->
   <link rel="stylesheet" href="assets/glightbox/css/glightbox.min.css"/>
-  <!-- <link rel="stylesheet" href="assets/aos/aos.css"/> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/aos/aos.css"/>
+  <!-- ? aos -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 </head>
 
 <body>
@@ -40,32 +47,39 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-auto">
             <li class="nav-item">
+              <div class="btn btn-info  rounded">
               <a class="nav-link scrollto" aria-current="page" href="#hero">Home</a>
+              </div>
             </li>
             <li class="nav-item">
+              <div class="btn btn-info  rounded">
               <a class="nav-link scrollto" href="#About">About</a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class="btn btn-info  rounded">
               <a class="nav-link scrollto" href="#products">Products</a>
+              </div>
             </li>
             <li class="nav-item">
+              <div class="btn btn-info  rounded">
               <a class="nav-link scrollto" href="#services">Services</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link scrollto" href="#portfolio">Portfolio</a>
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link scrollto" href="#team">Team</a>
-            </li> -->
-            <li class="nav-item">
+              <div class="btn btn-info  rounded">
               <a class="nav-link scrollto" href="#contact">Contact</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="get-started btn btn-dark rounded-pill" href="#products">Order Now <i class="bi-arrow-right"></i> </a>
+            </li>
+            <li class="nav-item">
+              <a class="get-started btn btn-dark rounded-pill"  data-bs-toggle="modal"
+              data-bs-target="#shareAppModal" >Share <i class="bi-share"></i> </a>
             </li>
           </ul>
         </div>
@@ -74,13 +88,72 @@
     </nav>
     <!-- end navbar  -->
   </header>
+
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="shareAppModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId">
+            Share App
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid d-flex justify-content-center align-items-center flex-column gap-2">
+          <div id="theQrcode"></div>
+          <div>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="linkValue"
+                id="linkValue"
+                placeholder=""
+                value="http://localhost:3000/"
+              />
+              <label for="linkValue">Link</label>
+            </div>
+          
+          </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary "><i class="bi-link mx-2"></i>Copy Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
   <!-- background-image: url(images/water-bottles/water2.jpg); -->
   <!-- end header  -->
 
-  <section id="hero" class="main-bg"  style="background-image: url(images/water-bottles/water3.jpg);background-color: transparent; background-size:cover; background-position: 50%;">
+  <section id="hero" class="main-bg"  style="background-image: url(images/main-background.jpg);background-color: transparent; background-size:cover; background-position: 50%;">
     <div class="container" data-aos="fade-up">
       <div class="row align-items-center ">
-        <div class=" col-lg-6  col-12 order-2 order-lg-2 ">
+        <div class=" col-lg-6  col-12 order-2 order-lg-1 ">
           <h1 class=" "><span class="text-shadow-2">Better Health With OceanWater!</span></h1>
           <h2 >Order pure drinking water from us today!</h2>
       
@@ -89,7 +162,7 @@
             <!-- <a href="#products" class="get-started btn btn-light text-dark"><i class="bi-pin-map"></i>Track Order </a> -->
           
         </div>
-        <div class="col-lg-5 col-12 order-1 order-lg-1 " data-aos="zoom-in" data-aos-delay="150">
+        <div class="col-lg-5 col-12 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="150">
           <img class="img-fluid animated" src="images/water-bottles/bottles4.png"  alt="animation img">
         </div>
       </div>
@@ -104,7 +177,7 @@
           <p><i>We offer pure drinking water vending services to many residence. <br> We cover the following locations:</i></p>
           <ul class="list-unstyled" id="OurLocations">
           </ul>
-          <a href="#products" class="read-more">Order Now</a>
+          <a href="#products" class="read-more">Order Now<i class="bi-arrow-right ms-1"></i> </a>
         </div>
 
         <div class=" col-lg-6 col-12 order-1 " data-aos="fade-right">
@@ -165,9 +238,8 @@
               <ul class="list-unstyled  ">
                 <li>Free Delivery</li>
                 <li>Have Your Own Water Bottle</li>
-                <li>30 Min Delivery</li>
-                
-                <li class="na">Massa ultricies mi</li>
+                <li>Sub 30 Minutes Delivery</li>
+                <li >Cash On Delivery</li>
               </ul>
               <div class="btn-wrap">
                 <!-- <a class="btn-buy" id="buyNow1" >Buy Now</a> -->
@@ -335,11 +407,12 @@
                               </div>
                               <div class="form-floating mb-3">
                                 <input
-                                  type="number"
+                                  type="text"
                                   class="form-control"
                                   name="phoneNumber"
                                   id="phoneNumber"
                                   placeholder=""
+                                  value="+254"
                                 />
                                 <label for="phoneNumber">Phone Number</label>
                               </div>
@@ -351,6 +424,7 @@
                             
                               
                             </div>
+                          
                             
                           </div>
                         </div>
@@ -364,7 +438,7 @@
                       >
                         Close
                       </button>
-                      <button type="submit" class="btn btn-success">Send Request</button>
+                      <button type="submit" class="btn btn-success">Confirm Order</button>
                     </div>
                   </form>
                 </div>
@@ -415,34 +489,44 @@
 
             orderForm.addEventListener("submit", async (e)=>{
               e.preventDefault();
-              const response = await fetch("/order", {method: "POST", body: JSON.stringify({product: "The One" ,phoneNumber: phoneNumber.value,location: locationSelect.value ,price: firstProductQuantity.value,personName: personName.value}), headers: {"Content-Type": "application/json"}}  );
-              const data = await response.json();
-              phoneNumber.value = ""
-              volumeSelect.value = ""
-              locationSelect.value = ""
-              firstProductQuantity.value = ""
-
-              if(response.ok){
-                if(data.error){
-                  await Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: data.error,
-                  });
-
+              if(!phoneNumber.value.startsWith("+254")){
+                await Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: "Invalid Phone Number! Number Must Start With +254..",
+                    });
+              }else{
+             
+                const response = await fetch("/order", {method: "POST", body: JSON.stringify({product: "The One" ,phoneNumber: phoneNumber.value,location: locationSelect.value ,price: firstProductQuantity.value,personName: personName.value}), headers: {"Content-Type": "application/json"}}  );
+                const data = await response.json();
+                personName.value = ""
+                phoneNumber.value = "+254"
+                volumeSelect.value = ""
+                locationSelect.value = ""
+                firstProductQuantity.value = ""
+  
+                if(response.ok){
+                  if(data.error){
+                    await Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: data.error,
+                    });
+  
+                  }else{
+                    await Swal.fire({
+                      title: "Sweet!",
+                      html: data.data,
+                      icon: "success",
+                    });
+                  }
                 }else{
                   await Swal.fire({
-                    title: "Sweet!",
-                    html: data.data,
-                    icon: "success",
-                  });
+                      icon: "error",
+                      title: "Oops...",
+                      text: "Something Went Wrong!",
+                    });
                 }
-              }else{
-                await Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something Went Wrong!",
-                  });
               }
             })
               // Use above variables to manipulate the DOM
@@ -907,21 +991,21 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>Our Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p> Ruaraka, Nairobi, Kenya</p>
           </div>
         </div>
         <div class="col-lg-3 mb-4">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Us</h3>
-            <p>contact@example.com</p>
+            <p>info@oceanwater.co.ke</p>
           </div>
         </div>
         <div class="col-lg-3 mb-4">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
             <h3>Call Us</h3>
-            <p>+1 5589 55488 55</p>
+            <p>+254-755-555</p>
           </div>
         </div>
       </div>
@@ -977,51 +1061,47 @@
   <footer id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <h3>Techhie</h3>
+        <div class="col-lg-4 col-md-6">
+          <h3>OceanWater</h3>
           <p>
-            A108 Adam Street
+           
             <br />
-            New York, NY 535022
+            Ruaraka , Nairobi
             <br />
-            United States
+            Kenya
         
           </p>
           <div class="phone-email">
             <strong>Phone</strong>
-            +1 5589 55488 55
+            +254-7555-5555
             <br />
             <strong>Email</strong>
-            info@example.com
+            info@oceanwater.co.ke
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <h4>Useful Links</h4>
           <ul class="list-unstyled">
             <li>
               <i class="bx bx-chevron-right"></i>
-              <a href="#">Home </a>
+              <a href="/hero">Home </a>
             </li>
             <li>
               <i class="bx bx-chevron-right"></i>
-              <a href="#">About us </a>
+              <a href="#About">About us </a>
             </li>
             <li>
               <i class="bx bx-chevron-right"></i>
-              <a href="#">Serivcies </a>
+              <a href="#products">Products </a>
             </li>
             <li>
               <i class="bx bx-chevron-right"></i>
-              <a href="#">Terms of servicies </a>
+              <a href="#services">Services </a>
             </li>
-            <li>
-              <i class="bx bx-chevron-right"></i>
-              <a href="#">Privicy policies </a>
-            </li>
-           
+
           </ul>
         </div>
-        <div class="col-lg-2 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <h4>Our Servicies</h4>
           <ul class="list-unstyled">
             <li>
@@ -1047,24 +1127,22 @@
            
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h4>Join Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          <form action="" method="" class="form-group">
-            <input class="form-control" type="text" name="email">
-            <input type="submit" value="Subscribe">
-          </form>
-        </div>
+       
       </div>
     </div>
     <div class="container">
       <div class="copyright-wrap d-md-flex py-4 text-center">
       <div class="text-md-left">
         © Copyright
-        <strong><span>Techie </span></strong>
+        <strong><span> </span></strong>
         . All Rights Reserved 
         <div class="credits">
-          Designed by abdelmoniem </div>
+          <a href="https://github.com/ElvisKemoi" class="credits">
+
+            Designed by Elvis Kemoi 
+          </a>
+
+        </div>
       </div>
       <div class="text-md-right ms-md-auto social-links py-4 text-center ">
       <a href="#"><i class="bx bxl-twitter"></i></a>
@@ -1087,37 +1165,62 @@
   <!-- <script src=" https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.min.js "></script> -->
   <!-- bootstrap js files  -->
   <!-- <script src="js/bootstrap.min.js"></script> -->
+   <!-- ? bootstrap bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
   <!-- swiper js files  -->
   <!-- <script src="assets/swiper/swiper-bundle.min.js"></script> -->
+   <!-- ?swiper -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- pure counter  -->
   <!-- <script src="assets/purecounter/purecounter.js"></script> -->
   <!-- isotype filtering -->
   <!-- <script src="assets/isotope-layout/isotope.pkgd.min.js"></script> -->
+  <!-- ?Isotope -->
   <script src=" https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js "></script>
   <!-- glightbox -->
   <!-- <script src="assets/glightbox/js/glightbox.min.js"></script> -->
+   <!-- ?Glight box -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" integrity="sha512-RBWI5Qf647bcVhqbEnRoL4KuUT+Liz+oG5jtF+HP05Oa5088M9G0GxG0uoHR9cyq35VbjahcI+Hd1xwY8E1/Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Swal -->
   <!-- <script src="js/sweetAlert.js"></script> -->
+  <!-- ?Sweetalert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- main js files  -->
   <script src="js/main.js"></script>
   <!-- aos files  -->
   <!-- <script src="assets/aos/aos.js"></script> -->
+  <!-- ? aos -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Contact Form -->
   <script src="js/form.js"></script>
 <!-- Locaiton Select -->
  <script src="js/location.js"></script>
+ <!-- Qr Code -->
+  <script src="js/qrcodejs/qrcode.min.js"></script>
 
- <script>
+  <script>
+    var shareAppModal = document.getElementById('shareAppModal');
+    var qrcode = new QRCode(document.getElementById("theQrcode"), {
+		width: 300,
+		height: 300,
+	});
+  
+	function makeCode(albumIdToShare) {
+		qrcode.makeCode(`${albumIdToShare}`);
+	}
 
-
- </script>
+	makeCode("http://localhost:3000/");
+    shareAppModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        let button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        let recipient = button.getAttribute('data-bs-whatever');
+  
+      // Use above variables to manipulate the DOM
+    });
+  </script>
 
 </body>
 
